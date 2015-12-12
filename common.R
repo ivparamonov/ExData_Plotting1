@@ -2,7 +2,8 @@
 # Particularly, it loads and prepares the data for plotting and defines
 # functions used in more than one script.
 
-data <- read.csv('household_power_consumption.txt', sep=';')
+data <- read.csv('household_power_consumption.txt', sep=';', na.strings='?')
+data <- subset(data, Date == '1/2/2007' | Date == '2/2/2007')
 data$datetime <- strptime(paste(data$Date, data$Time), '%d/%m/%Y %H:%M:%S')
 par(mfrow = c(1, 1))
 
