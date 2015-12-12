@@ -1,0 +1,6 @@
+source('common.R')
+par(mfrow = c(2, 2))
+plot2(data)
+plot(data$datetime, data$Voltage, type='l', xlab = 'datetime', ylab = 'Voltage')
+plot3(data)
+plot(data$datetime, data$Global_reactive_power, type='l', xlab = 'datetime', ylab = 'Global_reactive_power')
