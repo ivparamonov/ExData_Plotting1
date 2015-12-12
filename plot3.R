@@ -1,5 +1,4 @@
-data <- read.csv('household_power_consumption.txt', sep=';')
-data$datetime <- strptime(paste(data$Date, data$Time), '%d/%m/%Y %H:%M:%S')
+source('common.R')
 with(data, {
   plot(datetime, Sub_metering_1, type='l', xlab = '', ylab = 'Energy sub metering')
   lines(datetime, Sub_metering_2, col = 'red')
